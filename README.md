@@ -27,7 +27,7 @@ https://dev.mysql.com/downloads/mysql/
 | 1 | ID | 商品ID | INT | ● |  |  |  |  |  |
 | 2 | NAME | 商品名 | VARCHAR(50) |  |  | ● |  |  |  |
 | 3 | PRICE | 価格 | INT |  |  | ● |  |  |  |
-| 4 | STATE | 状態 | VARCHAR(10) |  |  | ● |  |  | S（新品同様）<br>A（未使用に近い）<br>B（目立った傷や汚れなし）<br>C（やや傷や汚れあり）<br>D（傷や汚れあり）<br>E（全体的に状態が悪い） |
+| 4 | STATE | 状態 | VARCHAR(10) |  |  | ● |  |  | S、A、B、C、D、E *1 |
 | 5 | M_CAT_ID | 中カテゴリID | INT |  |  |  | M_CATEGORY(ID) |  |  |
 | 6 | PUBLIC_FLG | 公開フラグ | TINYINT(1) |  |  | ● |  | 1:公開 | 0:非公開、1:公開 |
 | 7 | SELLER_ID | 出品者ユーザID | INT |  |  | ● | USER(ID) |  |  |
@@ -35,7 +35,7 @@ https://dev.mysql.com/downloads/mysql/
 | 9 | PURCHASE_DT | 購入日時 | DATETIME |  |  |  |  |  |  |
 | 10 | UPDATED_DT | 更新日時 | DATETIME |  |  | ● |  | 現在日時（更新時含む） |  |
 
-> PK: Primary Key（主キー）、UK: Unique Key（一意）、NN: Not Null、FK: Foreign Key（外部キー）
+> PK: Primary Key（主キー）、UK: Unique Key（一意）、NN: Not Null、FK: Foreign Key（外部キー）<br>*1）S: 新品同様、A: 未使用に近い、B: 目立った傷や汚れなし、C: やや傷や汚れあり、D: 傷や汚れあり、E: 全体的に状態が悪い
 
 <br>
 
