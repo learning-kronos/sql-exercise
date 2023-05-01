@@ -20,6 +20,39 @@ https://dev.mysql.com/downloads/mysql/
 
 <br>
 
+**USER（ユーザマスタ）**
+
+| # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
+|:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
+| 1 | ID | ユーザID | INT | ● |  |  |  |  |  |
+| 2 | EMAIL | メールアドレス | VARCHAR(100) |  | ● | ● |  |  |  |
+| 3 | PASSWORD | パスワード | VARCHAR(100) |  |  | ● |  |  |  |
+| 4 | NICKNAME | ニックネーム | VARCHAR(50) |  |  | ● |  |  |  |
+| 5 | REGION | 発送元地域 | VARCHAR(30) |  |  | ● |  |  | 都道府県名 |
+
+> PK: Primary Key（主キー）、UK: Unique Key（一意）、NN: Not Null、FK: Foreign Key（外部キー）
+
+<br>
+
+**L_CATEGORY（大カテゴリマスタ）**
+
+| # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+| 1 | ID | 大カテゴリID | INT | ● |  |  |  |  |  |
+| 2 | NAME | 大カテゴリ名 | VARCHAR(50) |  | ● | ● |  |  |  |
+
+<br>
+
+**M_CATEGORY（中カテゴリマスタ）**
+
+| # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
+|:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
+| 1 | ID | 中カテゴリID | INT | ● |  |  |  |  |  |
+| 2 | NAME | 中カテゴリ名 | VARCHAR(50) |  | ● | ● |  |  |  |
+| 3 | L_CAT_ID | 大カテゴリID | INT |  |  | ● | L_CATEGORY(ID) |  |  |
+
+<br>
+
 **ITEM（商品テーブル）**
 
 | # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
@@ -35,7 +68,7 @@ https://dev.mysql.com/downloads/mysql/
 | 9 | PURCHASE_DT | 購入日時 | DATETIME |  |  |  |  |  |  |
 | 10 | UPDATED_DT | 更新日時 | DATETIME |  |  | ● |  | 現在日時（更新時含む） |  |
 
-> PK: Primary Key（主キー）、UK: Unique Key（一意）、NN: Not Null、FK: Foreign Key（外部キー）<br>*1）S: 新品同様、A: 未使用に近い、B: 目立った傷や汚れなし、C: やや傷や汚れあり、D: 傷や汚れあり、E: 全体的に状態が悪い
+> *1）S: 新品同様、A: 未使用に近い、B: 目立った傷や汚れなし、C: やや傷や汚れあり、D: 傷や汚れあり、E: 全体的に状態が悪い
 
 <br>
 
@@ -45,37 +78,6 @@ https://dev.mysql.com/downloads/mysql/
 |:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
 | 1 | ITEM_ID | 商品ID | INT | ● |  |  | ITEM(ID) |  |  |
 | 2 | USER_ID | ユーザID | INT | ● |  |  | USER(ID) |  |  |
-
-<br>
-
-**USER（ユーザマスタ）**
-
-| # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
-|:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
-| 1 | ID | ユーザID | INT | ● |  |  |  |  |  |
-| 2 | EMAIL | メールアドレス | VARCHAR(100) |  | ● | ● |  |  |  |
-| 3 | PASSWORD | パスワード | VARCHAR(100) |  |  | ● |  |  |  |
-| 4 | NICKNAME | ニックネーム | VARCHAR(50) |  |  | ● |  |  |  |
-| 5 | REGION | 発送元地域 | VARCHAR(30) |  |  | ● |  |  | 都道府県名 |
-
-<br>
-
-**M_CATEGORY（中カテゴリマスタ）**
-
-| # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
-|:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
-| 1 | ID | 中カテゴリID | INT | ● |  |  |  |  |  |
-| 2 | NAME | 中カテゴリ名 | VARCHAR(50) |  | ● | ● |  |  |  |
-| 3 | L_CAT_ID | 大カテゴリID | INT |  |  | ● | L_CATEGORY(ID) |  |  |
-
-<br>
-
-**L_CATEGORY（大カテゴリマスタ）**
-
-| # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| 1 | ID | 大カテゴリID | INT | ● |  |  |  |  |  |
-| 2 | NAME | 大カテゴリ名 | VARCHAR(50) |  | ● | ● |  |  |  |
 
 <br><br>
 
