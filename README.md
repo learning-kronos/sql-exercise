@@ -24,7 +24,7 @@ https://dev.mysql.com/downloads/mysql/
 
 | # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
 |:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
-| 1 | ID | ユーザID | INT | ● |  |  |  |  |  |
+| 1 | ID | ユーザID | INT | ● |  |  |  |  | 自動採番 |
 | 2 | EMAIL | メールアドレス | VARCHAR(100) |  | ● | ● |  |  |  |
 | 3 | PASSWORD | パスワード | VARCHAR(100) |  |  | ● |  |  |  |
 | 4 | NICKNAME | ニックネーム | VARCHAR(50) |  |  | ● |  |  |  |
@@ -38,7 +38,7 @@ https://dev.mysql.com/downloads/mysql/
 
 | # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
 |:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| 1 | ID | 大カテゴリID | INT | ● |  |  |  |  |  |
+| 1 | ID | 大カテゴリID | INT | ● |  |  |  |  | 自動採番 |
 | 2 | NAME | 大カテゴリ名 | VARCHAR(50) |  | ● | ● |  |  |  |
 
 <br>
@@ -47,7 +47,7 @@ https://dev.mysql.com/downloads/mysql/
 
 | # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
 |:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
-| 1 | ID | 中カテゴリID | INT | ● |  |  |  |  |  |
+| 1 | ID | 中カテゴリID | INT | ● |  |  |  |  | 自動採番 |
 | 2 | NAME | 中カテゴリ名 | VARCHAR(50) |  | ● | ● |  |  |  |
 | 3 | L_CAT_ID | 大カテゴリID | INT |  |  | ● | L_CATEGORY(ID) |  |  |
 
@@ -57,7 +57,7 @@ https://dev.mysql.com/downloads/mysql/
 
 | # | 列名<br>（物理） | 列名<br>（論理） | データ型 | PK | UK | NN | FK | デフォルト | 備考 |
 |:-:|:--|:--|:--|:-:|:-:|:-:|:--|:--|:--|
-| 1 | ID | 商品ID | INT | ● |  |  |  |  |  |
+| 1 | ID | 商品ID | INT | ● |  |  |  |  | 自動採番 |
 | 2 | NAME | 商品名 | VARCHAR(50) |  |  | ● |  |  |  |
 | 3 | PRICE | 価格 | INT |  |  | ● |  |  |  |
 | 4 | STATE | 状態 | VARCHAR(10) |  |  | ● |  |  | S、A、B、C、D、E *1 |
